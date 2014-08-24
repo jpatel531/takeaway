@@ -1,34 +1,30 @@
 require_relative 'menu'
 require_relative 'calculator'
+require_relative 'takeaway'
 
 
 class Order
 
 	include Calculator
 
-	attr_reader :menu, :proposed_total
-	attr_accessor :dishes
+	attr_reader :proposed_total, :customer, :dish_list, :time_placed
+	attr_accessor :dishes, :menu
 
-	def initialize(*args)
-		@menu = Menu.new(Dish.new("Chow mein", 1.5), Dish.new("Chips", 1))
+	def initialize(customer, takeaway, dish_list, proposed_total)
 		@dishes ||= []
-		args = args.partition {|arg| arg.is_a? Hash}
-		@proposed_total = args.last[0]
-		assign_dish_to_order(args.first)
+		@time_placed = Time.new
+		@customer = customer
+		@takeaway = takeaway
+		@dish_list = dish_list
+		@proposed_total = proposed_total
+		@menu = takeaway.menu
+		process_dishes_from_list
 	end
 
-	def assign_dish_to_order(args)
-		args.each do |item|
-			item.each do |name, quantity|
-				raise "#{name} not on menu" if not_on_menu? name
-				quantity.times { @dishes << menu.dishes.find {|dish| dish.name == name}}
-			end
+	def process_dishes_from_list
+		dish_list.each do |name, quantity|
+			quantity.times { @dishes << menu.dishes.find {|dish| dish.name == name}}
 		end
 	end
-
-	def not_on_menu?(name)
-		menu.dishes.none? {|dish| name == dish.name }
-	end
-
 
 end

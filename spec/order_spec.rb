@@ -2,11 +2,12 @@ require 'order'
 
 describe Order do 
 
-	let(:order) {Order.new({"Chow mein" => 2}, 4)}
+	let(:order) {Order.new(Customer.new("Jamie", "1234"), Takeaway.new, {"Chow mein" => 2}, 4)}
 
-	it 'is associated with a menu' do 
-		expect(order.menu).to be_a Menu
+	before(:each) do
+		order.menu = Takeaway.new.menu
 	end
+
 
 	it 'can be created with a dish and its quantity' do 
 		chow_meins = order.dishes.map(&:name)
@@ -25,12 +26,6 @@ describe Order do
 		expect(order.incorrect_total_given?).to be_truthy
 		expect{order.total_checker}.to raise_error
 	end
-
-	it 'complains if you order something not on the menu' do 
-		expect{Order.new({"pork" => 1}, 3)}.to raise_error
-		# incorrect_order = Order.new({"pork" => 1}, 3)
-	end
-
 
 
 end
