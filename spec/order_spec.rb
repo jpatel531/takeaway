@@ -22,10 +22,5 @@ describe Order do
 		expect(order.true_total).to eq 3
 	end
 
-	it 'complains if you give the wrong total' do 
-		expect(order.incorrect_total_given?).to be_truthy
-		expect{order.total_checker}.to raise_error
-	end
-
 
 end
