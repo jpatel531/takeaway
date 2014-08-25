@@ -10,9 +10,4 @@ class Menu
 		dishes.each {|dish| @dishes << dish}
 	end
 
-
-
-
-
-
 end

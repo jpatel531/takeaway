@@ -6,12 +6,5 @@ class Dish
 		@name = name
 		@price = price
 	end
-
-	def formatted_price
-		format("£%.2f", price)
-	end
-
-
-
-
+	
 end
