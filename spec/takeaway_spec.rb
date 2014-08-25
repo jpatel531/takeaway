@@ -14,7 +14,7 @@ describe Takeaway do
 
 	it 'sends a confirmation message when an order is created' do
 		expect(takeaway).to receive(:send_confirmation_of)
-		customer = Customer.new("Jamie", 07739515287)
+		customer = Customer.new("Jamie", "07739515287")
 		customer.place_order_at takeaway, {"Chow mein" => 2}, 3
 	end
 

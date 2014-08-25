@@ -8,7 +8,6 @@ describe Order do
 		order.menu = Takeaway.new.menu
 	end
 
-
 	it 'can be created with a dish and its quantity' do 
 		chow_meins = order.dishes.map(&:name)
 		expect(chow_meins).to eq ["Chow mein", "Chow mein"]

@@ -20,9 +20,7 @@ class Order
 	end
 
 	def true_total
-		prices = []
-		dishes.each {|dish| prices << dish.price}
-		prices.inject(&:+)
+		dishes.map(&:price).inject(&:+)
 	end
 
 end
