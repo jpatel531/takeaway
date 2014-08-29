@@ -9,9 +9,7 @@ describe Dish do
 		expect(dish.price).to eq 1.5
 	end
 
-	it 'should display a formatted version of the price' do 
-		expect(dish.formatted_price).to eq "£1.50"
-	end
+
 
 
 end
