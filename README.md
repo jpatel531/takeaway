@@ -47,5 +47,8 @@ If the order hasn't raised an incorrect total error and if you have a Twilio-reg
 
 ##How to run tests
 
-` rspec `
+```
+cd takeaway
+rspec 
+```
 
