@@ -1,18 +1,18 @@
 [
   {
-    "commit": "bfc2b4af791177a3529885950c29183bfa8b3d33",
+    "commit": "05bbf99e153430657e53e4a0a467a70b7808926d",
     "instruction": "This",
     "source": "lib/menu.rb",
     "spec": "spec/menu_spec.rb"
   },
   {
-    "commit": "9e10d695bb563b27b4ce9899faab6126a69aa689",
+    "commit": "f5612d049069c99d1f52a3d7d27b040c446dbb57",
     "instruction": "That",
     "source": "lib/menu.rb",
     "spec": "spec/menu_spec.rb"
   },
   {
-    "commit": "340b598d7d08e2379e0d2f75ce41e75d827c15fe",
+    "commit": "e8e2c00f56ce2e522bb152a0ec836e3da3249012",
     "instruction": "These",
     "source": "lib/menu.rb",
     "spec": "spec/menu_spec.rb"
